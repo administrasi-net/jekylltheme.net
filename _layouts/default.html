@@ -112,7 +112,7 @@
       </div>
     </div>
   </footer><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script> $.ajax({ url: 'https://api.github.com/repos/{{ page.author | replace: " ", "-"}}/{{ page.title | replace: " ", "-" }}', type: 'GET', dataType: 'json', success: function(data) { $('.stars').append(data.stargazers_count); $('.date').append(data.created_at.split('T')[0]); $(".forks").append(data.forks); $(".desc").append(data.description); $(".arch").attr('href', 'https://github.com/'+ data.owner.login +'/'+ data.name +'/archive/'+ data.default_branch +'.zip'); $('.avatar-post-jq').attr('src', data.owner.avatar_url + '&s=32)');</script>
+<script>$.ajax({ url: 'https://api.github.com/repos/{{ page.author | downcase | replace: " ", "-"}}/{{ page.title  | downcase | replace: " ", "-" }}', type: 'GET', dataType: 'json', success: function(data) { $('.stars').append(data.stargazers_count); $('.date').append(data.created_at.split('T')[0]); $(".forks").append(data.forks); $(".desc").append(data.description); $(".arch").attr('href', 'https://github.com/'+ data.owner.login +'/'+ data.name +'/archive/'+ data.default_branch +'.zip'); $('.avatar-post-jq').attr('src', data.owner.avatar_url + '&s=32)');</script>
 
 
 </body>
