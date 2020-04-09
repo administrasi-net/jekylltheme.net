@@ -1,0 +1,15 @@
+name: Jekyll Theme
+url: https://jekylltheme.net
+title: Free Jekyll Themes
+description: Jekylltheme.Net is directory of the best free Jekyll themes for your blog or website.
+
+permalink: "/themes/:title"
+
+plugins: [jekyll-paginate]
+
+highlighter: pygments
+paginate: 20
+
+# Build settings
+markdown: kramdown
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'vendor']
