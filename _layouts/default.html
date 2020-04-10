@@ -94,7 +94,8 @@
 
             //-->
           </script>
-          
+          <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
         </div>
       </div>
     </div>
@@ -139,8 +140,7 @@
       </div>
     </div>
   </footer>
-  <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
- {% if page.layout == 'post' %}
+   {% if page.layout == 'post' %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>$.ajax({ url: '{{ page.homepage | replace: "https://github.com/", "https://api.github.com/repos/"}}', type: 'GET', dataType: 'json', success: function(data) { $('.stars').append(data.stargazers_count); $('.date').append(data.created_at.split('T')[0]); $(".forks").append(data.forks); $(".desc").append(data.description); $(".arch").attr('href', 'https://github.com/'+ data.owner.login +'/'+ data.name +'/archive/'+ data.default_branch +'.zip');
 $(".users").attr('href', data.owner.html_url);
