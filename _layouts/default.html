@@ -4,6 +4,34 @@
   <meta charset="UTF-8">
   <title>{%if page.title %}{{ page.title }} | {{ site.title }} {% else %}{{ site.name }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <meta property="fb:app_id" content="2023057631120381">
+    <meta property="og:locale" content="id">
+    <meta property="og:title" content="{%if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.layout == 'post' %}
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="{{site.url}}/asset/image/{{ page.image }}" >
+    <meta property="og:image:alt" content="{{page.title}}" >
+    <meta property="article:publisher" content="http://www.facebook.com/jekylltheme.net" >
+    <meta property="article:author" content="https://www.facebook.com/you.w4hyou" >
+    <meta property="article:published_time" content="{{ page.date }}" >
+    {% else %}
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{site.url}}/img/twitter-card.png">
+    <meta property="og:image:alt" content="{{site.name}}">
+    {% endif %}
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:site" content="@wahyu243">
+    <meta name="twitter:creator" content="@you_wahyou">
+    <meta name="twitter:card" content="summary">
+    <meta content="3kj3zUqTMQb4K-G7zoCj1aLHtho" name="alexaVerifyID">
   <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
   <link href="/assets/css/jekyllthemes.css" rel="stylesheet" />
   <link href="/assets/css/syntax.css" rel="stylesheet" />
@@ -112,13 +140,14 @@
     </div>
   </footer>
   <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+ {% if page.layout == 'post' %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>$.ajax({ url: '{{ page.homepage | replace: "https://github.com/", "https://api.github.com/repos/"}}', type: 'GET', dataType: 'json', success: function(data) { $('.stars').append(data.stargazers_count); $('.date').append(data.created_at.split('T')[0]); $(".forks").append(data.forks); $(".desc").append(data.description); $(".arch").attr('href', 'https://github.com/'+ data.owner.login +'/'+ data.name +'/archive/'+ data.default_branch +'.zip');
 $(".users").attr('href', data.owner.html_url);
 $(".username").append(data.owner.login);
 $('.avatar-post-jq').attr('src', data.owner.avatar_url + '&s=32)');
 var hp = data.homepage; var ck = "http"; if( hp != null && hp.indexOf(ck) != -1){ $('.demo-post').attr('href', data.homepage); } else { $('.demo-post').attr('href', "http://" + data.homepage); } }, error: function() { alert('Error fetching repo details'); }, beforeSend: setHeader }); function setHeader(xhr) { let auth_token = "1a70afb8878766fb2ac25d14037c64dc37474c75"; xhr.setRequestHeader('Authorization', 'Bearer ' + auth_token); }</script>
-
+{% endif %}
 
 </body>
 </html>
