@@ -66,8 +66,7 @@
 
             //-->
           </script>
-          <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-
+          
         </div>
       </div>
     </div>
@@ -111,7 +110,9 @@
 
       </div>
     </div>
-  </footer><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </footer>
+  <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>$.ajax({ url: '{{ page.homepage | replace: "https://github.com/", "https://api.github.com/repos/"}}', type: 'GET', dataType: 'json', success: function(data) { $('.stars').append(data.stargazers_count); $('.date').append(data.created_at.split('T')[0]); $(".forks").append(data.forks); $(".desc").append(data.description); $(".arch").attr('href', 'https://github.com/'+ data.owner.login +'/'+ data.name +'/archive/'+ data.default_branch +'.zip'); $('.avatar-post-jq').attr('src', data.owner.avatar_url + '&s=32)');
 var hp = data.homepage; var ck = "http"; if( hp != null && hp.indexOf(ck) != -1){ $('.demo-post').attr('href', data.homepage); } else { $('.demo-post').attr('href', "http://" + data.homepage); } }, error: function() { alert('Error fetching repo details'); }, beforeSend: setHeader }); function setHeader(xhr) { let auth_token = "1a70afb8878766fb2ac25d14037c64dc37474c75"; xhr.setRequestHeader('Authorization', 'Bearer ' + auth_token); }</script>
 
