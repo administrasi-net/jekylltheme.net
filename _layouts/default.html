@@ -11,7 +11,7 @@
     <meta property="og:title" content="{%if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.name }}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.title }} | {{ site.name }}, {{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     {% if page.layout == 'post' %}
     <meta property="og:type" content="article">
     <meta property="og:image" content="{{site.url}}/thumbnails/{{ page.image }}" >
