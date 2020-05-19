@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <title>{%if page.title %}{{ page.title }} | {{ site.title }} {% else %}{{ site.name }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     
     <meta property="fb:app_id" content="2023057631120381">
     <meta property="og:locale" content="id">
     <meta property="og:title" content="{%if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.name }}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     {% if page.layout == 'post' %}
     <meta property="og:type" content="article">
     <meta property="og:image" content="{{site.url}}/thumbnails/{{ page.image }}" >
@@ -27,7 +27,7 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}">
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:site" content="@wahyu243">
     <meta name="twitter:creator" content="@you_wahyou">
     <meta name="twitter:card" content="summary">
