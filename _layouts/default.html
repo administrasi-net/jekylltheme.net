@@ -2,16 +2,16 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>{%if page.title %}{{ page.title }} | {{ site.title }} {% else %}{{ site.name }}{% endif %}</title>
+  <title>{%if page.title %}{{ page.title }} - {{ site.title }} {% else %}{{ site.name }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html}}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.title }} {{ site.title }}, {{ page.excerpt | strip_html}}{% else %}{{ site.description }}{% endif %}">
     
     <meta property="fb:app_id" content="2023057631120381">
     <meta property="og:locale" content="id">
-    <meta property="og:title" content="{%if page.title %}{{ page.title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}">
+    <meta property="og:title" content="{%if page.title %}{{ page.title }} {{ site.name }}{% else %}{{ site.name }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.name }}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.title }} | {{ site.name }}, {{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.title }} | {{ site.title }}, {{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
     {% if page.layout == 'post' %}
     <meta property="og:type" content="article">
     <meta property="og:image" content="{{site.url}}/thumbnails/{{ page.image }}" >
