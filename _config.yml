@@ -1,7 +1,7 @@
-name: JekyllTheme.Net
-url: https://jekylltheme.net
+name: JekyllTheme
+url: https://theme.administrasi.net
 title: Free Jekyll Themes
-description: Jekylltheme.Net is directory of the best free Jekyll themes for your blog or website.
+description: Jekylltheme is directory of the best free Jekyll themes for your blog or website.
 
 permalink: "/themes/:title"
 
